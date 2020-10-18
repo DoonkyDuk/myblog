@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+{% if show_edit%}
+<a href="{% url 'blog:edit_article' article.id%}">Edit</a><br>
+{%endif%}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1>{% block title %} {{ article.title }} {% endblock title %}</h1>
+        <a class=" text-muted" href="{% url 'blog:profile'%}">{{ article.author }}</a>
+        <p class="card-text ">{{ article.text }}</p>
+        <p>Likes: {{article.likes}}, Dislikes: {{article.dislikes}}</p>
+        <p> </p>
+      </div>
+    </div>
+  </div>
+
+  {% if user.is_authenticated %}
+  <form action = 'like' method = 'POST'>
+    {% csrf_token %}
+    <a class="nav-link text-black font-weight-bold"><button type="submit">Like</button></a>
+  </form>
+
+  <form action='dislike' method='POST'>
+    {% csrf_token %}
+    <button type="submit">Dislike</button>
+  </form>
+  {% endif %}
+
+</div>
+
+{% endblock content %}

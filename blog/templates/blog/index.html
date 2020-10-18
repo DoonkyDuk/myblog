@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<ul>
+  {% for article in latest_articles %}
+  <li>
+    <a href="{% url 'blog:article' article.id %}"> {{article.title}}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% if user.is_authenticated%}
+  <a href="{% url 'blog:create_article' %}">New Article</a><br>
+{% endif%}
+
+{% endblock%}
