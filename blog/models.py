@@ -27,13 +27,6 @@ class Like(models.Model):
                                        choices=Like_Or_Dislike_Choices,
                                        default=None)
 
-class Comment(models.Model):
-    article = models.ForeignKey(Article, on_delete = models.CASCADE)
-    author = models.ForeignKey(User, on_delete = models.CASCADE)
-    text = models.TextField()
-    likes = models.IntegerField()
-    publish_date = models.DateTimeField(default = timezone.now)
-
 class authorization(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     login = models.CharField(max_length=100)
