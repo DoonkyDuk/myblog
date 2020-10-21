@@ -27,7 +27,7 @@ class Like(models.Model):
                                        choices=Like_Or_Dislike_Choices,
                                        default=None)
 
-class Commentary(models.Model):
+class Comment(models.Model):
     article = models.ForeignKey(Article, on_delete = models.CASCADE)
     author = models.ForeignKey(User, on_delete = models.CASCADE)
     text = models.TextField()

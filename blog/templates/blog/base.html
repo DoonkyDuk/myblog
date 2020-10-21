@@ -2,7 +2,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Django Central</title>
+        <title>My Blog</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
         <meta name="google" content="notranslate" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,7 +30,10 @@
                         </li>
                         {% else %}
                         <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="{% url 'blog:profile'%}">Hello {{user.username}}!</a>
+                            <a class="nav-link text-black font-weight-bold" href="{% url 'blog:home'%}">Hello {{user.username}}!</a>
+                        </li>
+                        <li class="nav-item text-black">
+                          <a class="nav-link font-weight-bold text-black" href="{% url 'blog:create_article' %}">New Article</a>
                         </li>
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'blog:logout'%}">Log Out</a>

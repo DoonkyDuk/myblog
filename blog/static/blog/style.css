@@ -18,3 +18,37 @@ padding-bottom: 15px;
 box-shadow: 0 16px 48px #E3E7EB;
 padding-top: 10px;
 }
+
+.button-container {
+  width: 30%;
+  display: flex;
+}
+
+.button-container form{
+  width: 20%;
+  flex-grow: 0.5;
+}
+
+.button-container button {
+  flex-grow: 0.5;
+}
+
+.buttons {
+  width: 100px;
+}
+
+.login {
+  position: absolute;
+  top: 35%;
+  left: 30%;
+}
+.register {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
